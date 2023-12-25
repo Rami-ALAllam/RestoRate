@@ -1,0 +1,17 @@
+backcall==0.2.0
+bcrypt==4.0.1
+colorama==0.4.5
+decorator==5.1.1
+Django==2.2.4
+ipython==7.16.3
+ipython-genutils==0.2.0
+jedi==0.17.2
+parso==0.7.1
+pickleshare==0.7.5
+prompt-toolkit==3.0.36
+Pygments==2.14.0
+pytz==2023.3.post1
+six==1.16.0
+sqlparse==0.4.4
+traitlets==4.3.3
+wcwidth==0.2.10
