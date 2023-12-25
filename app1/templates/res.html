@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/stylingone.css' %}">
+    <link rel="stylesheet" href="{% static 'assets\css\style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        
+        <div class="top">
+            <div class="left">
+                <div class="info">
+                    <h1 style="color: #cda45e; margin-bottom: 3%; font-size: 300%;">{{oneres.name}}
+                        <hr>
+                    </h1>
+                    
+                    <h3>Placed in "{{oneres.location}}"</h3>
+                    <h3>Serves "{{oneres.foodtype}}"</h3>
+                    <h3>Rating of "{{rate}}" Stars</h3>
+                    <h3>Votes : {{allrate}}</h3><hr>
+
+                    {% if oneuser.id == oneres.uploaded_by.id %}
+                    <a href="/edit_res/{{oneres.id}}"> Edit</a> |
+                    <a href="/del_res/{{oneres.id}}">Delete</a>
+                    {%endif%}
+                    {% if oneuser in oneres.users_who_like.all %}
+                    <p>"This Restaurant is in your Favorite List"</p>
+                    <a href="/unfav_res/{{oneres.id}}">Remove From Favorites</a>
+                    {%else%}
+                    | <a href="/fav_res/{{oneres.id}}">Add to Favorites</a>
+                    {%endif%}
+                    <a href="/main#all-res" class="btn" id="back">Go Back</a>
+                </div>
+            </div>
+            
+            <div class="right">
+                <h1 style="color: #cda45e; margin-bottom: 3%; font-size: 300%;">Rate and Review
+                    <hr>
+                </h1>
+                <form action="/rate/{{oneres.id}}" method="post">
+                    {%csrf_token%}
+                    <select name="rating1">
+                        <option value="1">1 Star</option>
+                        <option value="2">2 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="5">5 Stars</option>
+                    </select><br>
+                    <textarea name="review1" id="" cols="48" rows="10" placeholder="Your Review..."></textarea><br>
+                    <button type="submit" class="btn">Add</button>
+                </form>
+            </div>
+        </div>
+            <div class="review">
+                <h3 style="color: #cda45e; margin-bottom: 3%; font-size: 200%;">Reviews</h3>
+                <hr>
+                <ul>
+                    {% for rev in allrev %}
+                    <li>{{rev.reviewed_by.first_name}} - {{rev.review}}</li>
+                    {% if oneuser.id == rev.reviewed_by.id %}
+                    <a href="/edit_rev/{{rev.id}}/{{oneres.id}}"> Edit</a> |
+                    <a href="/del_rev/{{rev.id}}/{{oneres.id}}">Delete</a>
+                    {%endif%}<hr> 
+                    {%endfor%}
+                </ul>
+            </div>
+        
+    </div>
+</body>
+
+</html>

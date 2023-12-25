@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Restaurantly Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    {%load static%}
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- !-Template Main CSS File -->
+    <link rel="stylesheet" href="{% static 'assets\css\style.css' %}">
+
+    <!-- =======================================================
+  * Template Name: Restaurantly - v3.1.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+======================================================== -->
+</head>
+
+<section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Add a Restaurant</h2>
+            <p>Give your Honest experience with this Restaurant</p>
+        </div>
+
+        <form action="/create_res" method="post" role="form" class="php-email-form" data-aos="fade-up"
+            data-aos-delay="100">
+            {%csrf_token%}
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" name="res_name" class="form-control" id="name" placeholder="Restaurant Name">
+                    <div class="validate"></div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <select class="form-control" name="res_location" id="email"
+                    style="background-color: #0c0b09; border: 1px solid #625b4b; padding-bottom: 12px; color:#625b4b ;">
+                        <option value="rome">Rome</option>
+                        <option value="paris">Paris</option>
+                        <option value="athens">Athens</option>
+                        <option value="barcelona">Barcelona</option>
+                    </select>
+                    <div class="validate"></div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="foodtype" id="phone" placeholder="Cuisine Type">
+                    <div class="validate"></div>
+                </div>
+            </div>
+            <div class="text-center" >
+                <button type="submit" class="book-a-table-btn scrollto"  style="margin-top: 15px;">Add Resturant</button>
+            </div>
+        </form>
+        <a href="/main#Add-a-Restaurant" class="book-a-table-btn scrollto">Go Back</a>
+        <hr>
+        {% if messages %}
+        <ul class="messages" style="margin-top: 5%;">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>

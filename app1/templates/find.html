@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/stylingone.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container2">
+        <div class="review2" id="c1">
+
+            <h3 style="color: #cda45e; margin-bottom: 3%; font-size: 200%;">Restaurants in {{loc}}</h3>
+            <a href="/main#near_me" class="btn" id="b1">Go Back</a>
+            <hr>
+
+                    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+                        {%for res in allres%}
+                        <div class="col-lg-6 menu-item filter-starters" style="margin-bottom: 10px;">
+                            <div class="menu-content">
+                                <ul>
+                                <li><a href="/oneres/{{res.id}}" style="font-size: 150%;">{{res.name}}</a> Serves <span style="color: #cda45e;"> {{res.foodtype}}</span></li>
+                            </ul>
+                            </div>
+                            <div class="menu-ingredients">
+                                
+                            </div>
+                        </div>
+                        {%endfor%}
+                        
+                    </div>
+                    
+
+        </div>
+        {% if loc == 'rome' %}
+        <div data-aos="fade-up">
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190029.11508094898!2d12.371189126785413!3d41.9099532722924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy!5e0!3m2!1sen!2sus!4v1703458840227!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {%elif loc == 'athens'%}
+        <div data-aos="fade-up">
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50310.60536916668!2d23.697139698245298!3d37.990830014219426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd1f067043f1%3A0x2736354576668ddd!2sAthens%2C%20Greece!5e0!3m2!1sen!2sus!4v1703459036688!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {%elif loc == 'paris'%}
+        <div data-aos="fade-up">
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.96777914603!2d2.264634480903514!3d48.858825492060404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2s!4v1703459127831!5m2!1sen!2s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {%elif loc == 'barcelona'%}
+        <div data-aos="fade-up">
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d95785.71676374233!2d2.1176766!3d41.3892116!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona%2C%20Spain!5e0!3m2!1sen!2s!4v1703459185752!5m2!1sen!2s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {%endif%}
+    </div>
+
+</body>
+
+</html>

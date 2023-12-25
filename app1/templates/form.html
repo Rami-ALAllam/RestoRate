@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/stylingform.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">RestoRate</h1>
+        <div class="logreg">
+            <div class="reg">
+                <h1 style="color: #cda45e;">Registration</h1>
+                <form method="post" action="/register">
+                    {%csrf_token%}
+                    <p>
+                        <input type="text" name="fname" placeholder="First name">
+                    </p>
+                    <p>
+                        <input type="text" name="lname" placeholder="Last name">
+                    </p>
+                    <p>
+                        <input type="text" name="email" class="c1" placeholder="Email">
+                    </p>
+                    <p>
+                        <input type="date" name="bdate" class="c2" placeholder="Birth date">
+                    </p>
+                    <p>
+                        <input type="password" name="pass" class="c3" placeholder="Password">
+                    </p>
+                    <p>
+                        <input type="password" name="con-pass" class="c4" placeholder="Confirm PW">
+                    </p>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+            <div class="log">
+                <h1 style="color: #cda45e;">Log in</h1>
+                <form method="post" action="/login">
+                    {%csrf_token%}
+                    <p>
+                        <input type="text" name="e-mail" class="c5" placeholder="Email">
+                    </p>
+                    <p>
+                        <input type="password" name="passwd" placeholder="Password">
+                    </p>
+                    <button type="submit" class="btn">Log In</button>
+                </form>
+                {% if messages %}
+        <ul class="messages" style="color: white;">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/css/stylingone.css' %}">
+    <link rel="stylesheet" href="{% static 'assets\css\style.css' %}">
+</head>
+
+<body>
+    <div class="container1">
+            <div class="review"  id="c1">
+                <h3 style="color: #cda45e; margin-bottom: 3%; font-size: 200%;">Edit your Review for "{{oneres.name}}" Restaurant</h3>
+                <hr>
+                <form action="/update_rev/{{onerev.id}}/{{oneres.id}}" method="post">
+                    {%csrf_token%}
+                    <textarea style="background-color: #0c0b09; font-size: 120%; border: 1px solid #cda45e; color: #cda45e;" name="rev1" cols="60" rows="10">{{onerev.review}}</textarea>
+                    <button type="submit" class="btn"  style="margin-top: 15px; margin-bottom: 15px;">Update Review</button>
+                </form>
+                <a href="/oneres/{{oneres.id}}">Go Back</a>
+                | <a href="/del_rev/{{onerev.id}}/{{oneres.id}}">Delete Review</a>
+            </div>
+    </div>
+    
+</body>
+
+</html>

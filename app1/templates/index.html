@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Restaurantly Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+{%load static%}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="{% static 'assets\css\style.css' %}">
+  
+
+  <!-- =======================================================
+  * Template Name: Restaurantly - v3.1.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-check-circle d-flex align-items-center"><span style="text-transform: capitalize;">welcome {{oneuser.first_name}}</span></i>
+        <!-- <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i> -->
+      </div>
+
+      <!-- <div class="languages d-none d-md-flex align-items-center">
+        <ul>
+          <li>En</li>
+          <li><a href="#">De</a></li>
+        </ul>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="/main">RestoRate</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#Add-a-Restaurant">Add Restaurant</a></li>
+          <li><a class="nav-link scrollto" href="#top-rated">Popular Spot</a></li>
+          <li><a class="nav-link scrollto" href="#all-res">All Restaurants</a></li>
+          <li><a class="nav-link scrollto" href="#fav_ones">Favortie list</a></li>
+          <li><a class="nav-link scrollto" href="#near_me">Nearby</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a> -->
+            <!-- <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul> -->
+          <!-- </li> -->
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="/logout" class="book-a-table-btn scrollto d-none d-lg-flex">Log Out</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome to <span>RestoRate</span></h1>
+          <h2>When your finest dishes meet the magic of the place</h2>
+
+          <div class="btns">
+            <a href="#all-res" class="btn-menu animated fadeInUp scrollto">All Restaurants</a>
+            <a href="#fav_ones" class="btn-book animated fadeInUp scrollto">Favorite Restaurants</a>
+          </div>
+        </div>
+        <!-- <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> -->
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="{% static 'assets\img\Gusteau4.jpg' %}" alt="image">
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 class="fst-italic" style="color: #cda45e;">About us</h3>
+            <hr> 
+            <p class="fst-italic">
+              Hello there, I'm Chef Resto and after years of cooking the best dishes from different cuisines I came here to help you choose
+              the most suitable restaurant that fits your lovely taste. You are here to help me with Rating and Recommending Restaurants.
+            </p>
+            <!-- <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p> -->
+            <!-- <ul>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Why Us</h2>
+          <p>Why Trust our Rating</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+              <span>01</span>
+              <h4>From you</h4>
+              <p>All the Restaurants are added, rated, reviewed by you</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="200">
+              <span>02</span>
+              <h4> Rating Criteria</h4>
+              <p>The criteria of rating include factors like food quality, service, ambiance, and cleanliness.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="300">
+              <span>03</span>
+              <h4>Expert Reviews</h4>
+              <p>Ratings from food critics and experts who are collaborating with us.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+    <hr>
+
+    <!-- ======= Add a Restaurant Section ======= -->
+    <section id="Add-a-Restaurant" class="book-a-table">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Add a Restaurant</h2>
+          <p  style="margin-bottom: 2%;">Give your Honest experience with this Restaurant</p>
+          <a href="/addres" class="book-a-table-btn scrollto">Add a Restaurant</a>
+
+    </section>
+    <!-- End of Add a Restaurant Section -->
+
+    <!-- ======= Popular spot Section ======= -->
+    <section id="top-rated" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Popular Spots</h2>
+          <p>Check Our Popular Restaurants</p>
+        </div>
+
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+          {%for res in toprated %}
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'assets/img/images.jpeg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="/oneres/{{res.id}}">{{res.name}}</a><span>{{res.foodtype}}</span>
+            </div>
+            <div class="menu-ingredients">
+              {{res.location}}
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+
+      </div>
+    </section><!-- End Top Rated Section -->
+
+    <!-- ======= All res Section ======= -->
+    <section id="all-res" class="specials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>All Restaurant</h2>
+          <p>Check Our Special Restaurants</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              {%for res in allres%}
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-{{res.id}}">{{res.name}}</a>
+              </li>
+              {%endfor%}
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              {%for res in allres%}
+              <div class="tab-pane" id="tab-{{res.id}}">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3 style="text-transform: capitalize;">Located in {{res.location}}</h3>
+                    <p class="fst-italic">Serves "{{res.foodtype}}" </p>
+                    <a href="/oneres/{{res.id}}">Show more</a> |
+                    {% if oneuser.id == res.uploaded_by.id %}
+                    <a href="/edit_res/{{res.id}}"> Edit</a> |
+                    <a href="/del_res/{{res.id}}">Delete</a><br>
+                    {%endif%}
+                    {% if oneuser in res.users_who_like.all %}
+                    <p>"This Restaurant is in your Favorite List"</p>
+                    <a href="/unfav_res/{{res.id}}">Remove From Favorites</a>
+                    {%else%}
+                    <a href="/fav_res/{{res.id}}">Add to Favorites</a>
+                    {%endif%}
+                  </div>
+                  {% if res.location == 'rome' %}
+                  <div class="col-lg-4 text-center order-1 order-lg-2" style="position: relative; right: 200px;">
+                    <img src="{% static 'assets/img/rooftop-restaurants-rome.jpg' %}" alt="" width="400" height="400">
+                  </div>
+                  {% elif res.location == 'paris' %}
+                  <div class="col-lg-4 text-center order-1 order-lg-2" style="position: relative; right: 200px;">
+                    <img src="{% static 'assets/img/paris.jpg' %}" alt=""  width="400" height="400">
+                  </div>
+                  {% elif res.location == 'athens' %}
+                  <div class="col-lg-4 text-center order-1 order-lg-2" style="position: relative; right: 200px;">
+                    <img src="{% static 'assets/img/athens.jpg' %}" alt=""  width="400" height="400">
+                  </div>
+                  {% elif res.location == 'barcelona' %}
+                  <div class="col-lg-4 text-center order-1 order-lg-2" style="position: relative; right: 200px;">
+                    <img src="{% static 'assets/img/about-bg.jpg' %}" alt=""  width="400" height="400">
+                  </div>
+                  {%endif%}
+                </div>
+              </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End All res Section -->
+
+    <!-- ======= Fav Res Section ======= -->
+    <section id="fav_ones" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Favorite Restaurants</h2>
+          <p>Restaurants that your heart melts in</p>
+        </div>
+
+        <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="menu-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-starters">Starters</li>
+              <li data-filter=".filter-salads">Salads</li>
+              <li data-filter=".filter-specialty">Specialty</li>
+            </ul>
+          </div>
+        </div> -->
+
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+          {%for res in favres%}
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'assets/img/heart.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              
+              <a href="/oneres/{{res.id}}">{{res.name}}</a>
+            </div>
+            <div class="menu-ingredients">
+              {{res.location}}
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+
+      </div>
+    </section><!-- End Top Rated Section -->
+
+
+<!-- ======= Near me Section ======= -->
+<section id="near_me" class="contact">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Near me</h2>
+      <p>Find Places close to you</p>
+    </div>
+  </div>
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="row mt-5">
+
+      <div class="col-lg-4">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>Where you like to have your meal</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 mt-5 mt-lg-0">
+        <form action="/find" method="post">
+          {%csrf_token%}
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <select class="form-control" name="res_location" id="email"
+                    style="background-color: #0c0b09; border: 1px solid #625b4b; padding-bottom: 12px; color:#cda45e ;">
+                        <option value="rome">Rome</option>
+                        <option value="paris">Paris</option>
+                        <option value="athens">Athens</option>
+                        <option value="barcelona">Barcelona</option>
+                    </select>
+            </div>
+          </div>
+          <div class="text-lg-end" style="position: relative; bottom: 30px;">
+            <button type="submit" class="book-a-table-btn scrollto" style="background-color: #0c0b09;" >Go Find</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  <div data-aos="fade-up">
+    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38403.8521763618!2d35.193622041805305!3d31.7035174306769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502d865aec80d67%3A0xf5c4213de4baf1f8!2sBethlehem!5e0!3m2!1sen!2s!4v1703459316886!5m2!1sen!2s" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section><!-- End Near me Section -->
+</main><!-- End #main -->
+
+<footer id="footer">
+<div class="container">
+  <div class="copyright">
+    &copy; Copyright <strong><span>RestoRate</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    <!-- All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+    Designed by <a href="https://www.linkedin.com/in/rami-al-allam-06408726b/">Rami Al-Allam</a>
+  </div>
+</div>
+</footer>
+
+
+  
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
