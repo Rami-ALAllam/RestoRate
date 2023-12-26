@@ -3,6 +3,7 @@
 <p>This solo project is part of the requirements needed for graduation of the part-time full stack web development at AXSOS Academy,
   it aims to make the future developer tests all of the coding abilities learned during the course and create a full stack website
   that helps solving some kind of problem.</p>
+<p>Technologies used are Django as a framework, with HTML,CSS,JavaScript.</p>
 <p>"RestoRate" as the name indicate it’s a full stack website that aims to be a hub for all the restaurants,Cafes,rooftops, with a touch of luxury
   in order to rate each one which gives the users a place to look for the most suitable restaurant to have a great meal and a great time.</p>
 <p>After registration to the website the user is moved to the Landpage with the ability to add, rate and review the places. in other words all the CRUD
